@@ -1,0 +1,46 @@
+import turtle
+import math
+
+# Set up the turtle screen
+screen = turtle.Screen()
+screen.title("Sun and Square Animation")
+screen.bgcolor("black")
+
+# Create the turtle for the sun
+sun = turtle.Turtle()
+sun.shape("circle")
+sun.color("red")
+sun.penup()
+
+# Define the initial position and size of the sun
+sun_radius = 100
+sun.shapesize(sun_radius / 20)
+sun.goto(0, 0)
+
+# Create the turtle for the square
+square = turtle.Turtle()
+square.shape("square")
+square.color("gold")
+square.penup()
+
+# Define the initial position and size of the square
+square_size = 50
+square.shapesize(square_size / 20)
+square_radius = 200  # Distance from the sun
+
+
+
+# Define the animation parameters
+rotation_angle = 0.1  # Faster rotation: increase the angle by which the square rotates around its center in each frame
+square.forward(-300)
+square.right(90)
+# Animation loop
+while True:
+    # Rotate the square around its center
+    square.circle(300)
+
+    # Update the screen
+    screen.update()
+
+# Exit on click
+screen.exitonclick()
